@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f0e8;
+    color: #2d2633;
+}
+header {
+    width: 100%;
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+nav {
+    display: flex;
+    gap: 30px;
+}
+nav a {
+    text-decoration: none;
+    color: #2d2633;
+    font-size: 16px;
+    transition: 0.3s;
+}
+nav a:hover,
+nav a.active {
+    color: #75649e;
+}
+/* =========================
+   SKILLS SECTION
+========================= */
+
+.skills-section {
+    min-height: 90vh;
+    padding: 70px 8%;
+}
+/* =========================
+   SKILLS HEADER
+========================= */
+
+.skills-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.skills-header span {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #75649e;
+}
+.skills-header h1 {
+    font-size: 45px;
+    margin: 15px 0;
+}
+.skills-header p {
+    font-size: 16px;
+    color: #666;
+}
+/* =========================
+   SKILLS CONTAINER
+========================= */
+
+.skills-container {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 40px;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   SKILL CARD
+========================= */
+
+.skill-card {
+    text-align: center;
+}
+
+
+/* =========================
+   CIRCLE
+========================= */
+
+.circle {
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    --progress: 0deg;
+
+    background: conic-gradient(
+        #75649e var(--progress),
+        #ddd5df var(--progress)
+    );
+
+    animation: fillCircle 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+
+/* =========================
+   EACH CIRCLE
+========================= */
+
+.html {
+    --final: 324deg;
+    animation-delay: 0s;
+}
+
+.css {
+    --final: 306deg;
+    animation-delay: 1.5s;
+}
+
+.javascript {
+    --final: 324deg;
+    animation-delay: 3s;
+}
+
+.web {
+    --final: 320.4deg;
+    animation-delay: 4.5s;
+}
+
+
+@property --progress {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+
+/* CIRCLE */
+
+.circle {
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    --progress: 0deg;
+
+    background: conic-gradient(
+        #75649e var(--progress),
+        #ddd5df var(--progress)
+    );
+
+    animation: fillCircle 0.6s ease-out forwards;
+}
+
+
+/* HTML - 90% */
+
+.html {
+    --final: 324deg;
+    animation-delay: 0s;
+}
+
+
+/* CSS - 85% */
+
+.css {
+    --final: 306deg;
+    animation-delay: 0.65s;
+}
+
+
+/* JavaScript - 90% */
+
+.javascript {
+    --final: 324deg;
+    animation-delay: 1.3s;
+}
+
+
+/* Web Development - 89% */
+
+.web {
+    --final: 320.4deg;
+    animation-delay: 1.95s;
+}
+
+
+/* SMOOTH FILL */
+
+@keyframes fillCircle {
+
+    from {
+        --progress: 0deg;
+    }
+
+    to {
+        --progress: var(--final);
+    }
+
+}
+
+/* =========================
+   INNER CIRCLE
+========================= */
+
+.circle-inner {
+    width: 145px;
+    height: 145px;
+
+    border-radius: 50%;
+
+    background: #f5f0e8;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-inner span {
+    font-size: 28px;
+    font-weight: bold;
+    color: #75649e;
+}
+
+/* =========================
+   INNER CIRCLE
+========================= */
+
+.circle-inner {
+
+    width: 145px;
+    height: 145px;
+
+    border-radius: 50%;
+
+    background: #f5f0e8;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.circle-inner span {
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    color: #75649e;
+}
+
+
+/* =========================
+   SKILL TEXT
+========================= */
+
+.skill-card h2 {
+
+    font-size: 21px;
+
+    margin-bottom: 8px;
+}
+
+
+.skill-card p {
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .skills-container {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    header {
+
+        flex-direction: column;
+
+        gap: 20px;
+
+    }
+
+
+    nav {
+
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+    }
+
+
+    .skills-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .skills-header h1 {
+
+        font-size: 35px;
+
+    }
+
+}

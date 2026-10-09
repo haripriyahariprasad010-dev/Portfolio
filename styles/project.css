@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    color: #29272d;
+    background: #f3eee7;
+}
+section {
+    scroll-margin-top: 80px;
+}
+/* NAVIGATION */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(38, 35, 43, 0.97);
+    border-bottom: 1px solid #45404d;
+    z-index: 1000;
+}
+
+.navbar {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #f5efe7;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: #e8e1d8;
+    font-weight: 500;
+    padding: 24px 0;
+    transition: 0.3s;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 16px;
+    width: 0;
+    height: 2px;
+    background: #9181bd;
+    transition: 0.3s;
+}
+.nav-links a:hover {
+    color: #b9abd8;
+}
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* COMMON SECTIONS */
+
+.section {
+    min-height: 80vh;
+    padding: 100px 10%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 55px;
+    color: #29272d;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 3px;
+    background: #75649e;
+    margin: 12px auto 0;
+    border-radius: 5px;
+}
+
+
+/* PROJECTS */
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.project-card {
+    background: #e9e2ec;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #d3c8d9;
+    transition: 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(55, 45, 65, 0.12);
+}
+
+.project-card h3 {
+    font-size: 23px;
+    margin-bottom: 15px;
+    color: #29272d;
+}
+
+.project-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #625d62;
+}
+
+.project-card .technologies {
+    margin-top: 15px;
+    color: #75649e;
+    font-weight: bold;
+}
+
+.project-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #75649e;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.project-btn:hover {
+    background: #29272d;
+    transform: translateY(-3px);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .navbar {
+        height: auto;
+        padding: 18px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 10px;
+        font-size: 13px;
+    }
+
+    .nav-links a {
+        padding: 5px 0;
+    }
+
+    .nav-links a::after {
+        bottom: 0;
+    }
+
+    .section {
+        padding: 80px 7%;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+}
